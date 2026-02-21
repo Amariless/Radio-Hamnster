@@ -67,5 +67,5 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "Radio Hamnster.slnx"
+    "dotnet.defaultSolution": "Ranmster.slnx"
 }

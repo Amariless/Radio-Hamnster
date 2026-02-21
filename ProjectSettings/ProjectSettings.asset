@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 28
-  productGUID: 5080bda63422bf94b9ce6d09f8642c0d
+  productGUID: 76985b5493e65a540b2570fb0707eb57
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: Radio Hamnster
+  productName: Ranmster
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -604,14 +604,14 @@ PlayerSettings:
   editorAssembliesCompatibilityLevel: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Radio Hamnster
+  metroPackageName: Ranmster
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: Radio Hamnster
+  metroApplicationDescription: Ranmster
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -682,10 +682,10 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 1
   windowsGamepadBackendHint: 0
-  cloudProjectId: a3217b7a-4630-482b-88f6-03f99e5f60c6
+  cloudProjectId: b205718f-3188-4166-82c8-5c7b1e909274
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Radio Hamnster
+  projectName: Ranmster
   organizationId: alejoama2005
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
