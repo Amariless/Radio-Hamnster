@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        rb.linearVelocity = new Vector2(direccionMovimiento * velocidad, rb.linearVelocity.y);
+        rb.velocity = new Vector2(direccionMovimiento * velocidad, rb.velocity.y);
     }
 
     void Jump()
