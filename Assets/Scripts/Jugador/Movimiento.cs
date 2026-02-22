@@ -13,12 +13,16 @@ public class PlayerMovement : MonoBehaviour
     public Button botonSalto;
 
     private Rigidbody2D rb;
+    private Animator animator;
+    private SpriteRenderer spriteRenderer;
     private bool enPiso;
     private float direccionMovimiento = 0f;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
 
         AddHoldListener(botonIzquierdo,  () => direccionMovimiento = -1f, () => direccionMovimiento = 0f);
         AddHoldListener(botonDerecho, () => direccionMovimiento =  1f, () => direccionMovimiento = 0f);
@@ -29,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         rb.velocity = new Vector2(direccionMovimiento * velocidad, rb.velocity.y);
+        Animation();
     }
 
     void Jump()
@@ -66,5 +71,26 @@ public class PlayerMovement : MonoBehaviour
             { eventID = UnityEngine.EventSystems.EventTriggerType.PointerUp };
         releaseEntry.callback.AddListener(_ => onRelease());
         trigger.triggers.Add(releaseEntry);
+    }
+
+    public void Animation(){
+        if(direccionMovimiento == 0f)
+        {
+            animator.SetBool("isRunning", false);
+        }
+        else
+        {
+            animator.SetBool("isRunning", true);
+            
+            // Voltear el sprite según la dirección
+            if(direccionMovimiento < 0f)
+            {
+                spriteRenderer.flipX = true;
+            }
+            else if(direccionMovimiento > 0f)
+            {
+                spriteRenderer.flipX = false;
+            }
+        }
     }
 }
