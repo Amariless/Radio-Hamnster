@@ -1,0 +1,35 @@
+{
+    "version": 1,
+    "name": "TouchControl",
+    "maps": [
+        {
+            "name": "Touch",
+            "id": "e8d441f9-c098-4cc0-8f50-78980965e7ac",
+            "actions": [
+                {
+                    "name": "MultiTouch",
+                    "type": "PassThrough",
+                    "id": "60359835-2227-4d66-a8d3-13f5fdf81ece",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "19eb0d3b-b59b-4ac6-8f3b-f2c2714c0173",
+                    "path": "<Touchscreen>/touch*/Press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MultiTouch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

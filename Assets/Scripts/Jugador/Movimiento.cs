@@ -49,11 +49,15 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
             enPiso = true;
+        else if (collision.gameObject.CompareTag("Platform"))
+            enPiso = true;
     }
 
     void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
+            enPiso = false;
+        else if (collision.gameObject.CompareTag("Platform"))
             enPiso = false;
     }
 
