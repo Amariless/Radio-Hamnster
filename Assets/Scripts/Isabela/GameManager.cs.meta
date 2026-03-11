@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 8449e80c9ec38254595f03412c28ebec
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - panelMenu: {fileID: 3385436101496902517, guid: b73b6be349b1bc044a544db687435b3a, type: 3}
+  - panelNiveles: {fileID: 7360240847209836628, guid: 51c9334b5258e7844b4e0815270062e6, type: 3}
+  - panelOpciones: {fileID: 5722559045880112844, guid: d463d521cfa68a645b1cd6a82e7caed2, type: 3}
+  - panelPausa: {fileID: 6176941416673672473, guid: bd1917f8070edbe4d8eecbb8a3176bb3, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
