@@ -35,7 +35,7 @@ public class puerta101 : MonoBehaviour
                 if (puertaCollider != null && puertaCollider.OverlapPoint(touchPosition))
                 {
                     toquesActuales++;
-                    Debug.Log("Tocando la puerta. Toques actuales: " + toquesActuales);
+                    
 
                     if (toquesActuales >= toquesParaAbrir)
                     {
@@ -51,7 +51,6 @@ public class puerta101 : MonoBehaviour
         if (!puertaAbierta)
         {
             puertaAbierta = true;
-            Debug.Log("Abriendo la puerta");
             puertaCollider.enabled = false;
             if (animator != null)
             {
