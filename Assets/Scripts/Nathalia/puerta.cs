@@ -10,7 +10,6 @@ public class puerta : MonoBehaviour
     [SerializeField] float esperaFallback = 1f;
 
     bool puertaAbierta;
-    bool animacionTerminada;
     bool cargandoEscena;
 
     void Start()
@@ -18,7 +17,6 @@ public class puerta : MonoBehaviour
         puertaCollider = GetComponent<Collider2D>();
 
         puertaAbierta = false;
-        animacionTerminada = false;
         cargandoEscena = false;
     }
 
@@ -80,7 +78,6 @@ public class puerta : MonoBehaviour
         }
 
         yield return new WaitForSeconds(esperaAnimacion);
-        animacionTerminada = true;
     }
 
 }
