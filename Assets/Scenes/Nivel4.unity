@@ -503,7 +503,7 @@ Transform:
   m_GameObject: {fileID: 238370352}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15, y: 5.9, z: 0.12027209}
+  m_LocalPosition: {x: -15, y: 1.6, z: 0.12027209}
   m_LocalScale: {x: 1.2761, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1491,6 +1491,7 @@ GameObject:
   - component: {fileID: 639088406}
   - component: {fileID: 639088405}
   - component: {fileID: 639088404}
+  - component: {fileID: 639088408}
   m_Layer: 0
   m_Name: Salida
   m_TagString: Untagged
@@ -1627,6 +1628,22 @@ Transform:
   - {fileID: 652899289}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &639088408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 639088403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 716bdbe958c309045b94b742dde3a779, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puertaCollider: {fileID: 0}
+  sensorCollider: {fileID: 0}
+  animator: {fileID: 0}
+  esperaFallback: 1
 --- !u!1 &652899288
 GameObject:
   m_ObjectHideFlags: 0
@@ -2082,8 +2099,8 @@ Transform:
   m_GameObject: {fileID: 1044755609}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.5, y: 1.7, z: 0.12027209}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 4.6887, y: 1.7, z: 0.12027209}
+  m_LocalScale: {x: 1.1551, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2041130285}
@@ -3467,7 +3484,7 @@ Transform:
   m_GameObject: {fileID: 1952251731}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -30.2, y: 0.5, z: 0.12027209}
+  m_LocalPosition: {x: -30.2, y: -1.7, z: 0.12027209}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

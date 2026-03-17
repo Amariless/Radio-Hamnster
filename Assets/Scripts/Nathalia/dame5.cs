@@ -30,19 +30,18 @@ public class dame5 : MonoBehaviour
 
     void RevisarToquePuerta()
     {
-        if (Input.touchCount <= 0)
+        if (Input.touchCount != 5)
         {
             return;
         }
 
-        Touch touch = Input.GetTouch(0);
-        Vector3 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
-
-        if (touch.phase == TouchPhase.Began)
+        
+        for (int i = 0; i < Input.touchCount; i++)
         {
-            if (puertaCollider != null && puertaCollider.OverlapPoint(touchPosition))
+            if (Input.GetTouch(i).phase == TouchPhase.Began)
             {
                 AbrirPuerta();
+                return;
             }
         }
     }
