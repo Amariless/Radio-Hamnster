@@ -21,11 +21,14 @@ public class PlayerMovement : MonoBehaviour
     private bool enPiso;
     private float direccionMovimiento = 0f;
 
+    private GameManager gameManager;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        gameManager = FindObjectOfType<GameManager>();
 
         AddHoldListener(botonIzquierdo,  () => direccionMovimiento = -1f, () => direccionMovimiento = 0f);
         AddHoldListener(botonDerecho, () => direccionMovimiento =  1f, () => direccionMovimiento = 0f);
@@ -110,13 +113,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.CompareTag("Sensor"))
         {
-            PasarNivel();
+            gameManager.CargarNivel();
         }
-    }
-
-    void PasarNivel()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void killPlayer()
