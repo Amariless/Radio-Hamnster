@@ -1,14 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class UiManagerJuego : MonoBehaviour
 {
-    private static UiManagerJuego Instance { get; set; }
     [SerializeField] private GameObject panelPausa;
-    
-
     public void Pausa()
     {
         panelPausa.SetActive(true);
@@ -17,12 +12,13 @@ public class UiManagerJuego : MonoBehaviour
 
     public void Reanudar()
     {
-        Time.timeScale = 1f;
         panelPausa.SetActive(false);
+        Time.timeScale = 1f;
     }
 
     public void VolverMenu()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
     }
 }

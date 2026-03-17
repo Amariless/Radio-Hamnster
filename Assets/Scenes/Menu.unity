@@ -352,7 +352,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8449e80c9ec38254595f03412c28ebec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiManager: {fileID: 1189326893}
 --- !u!4 &1047961466
 Transform:
   m_ObjectHideFlags: 0
@@ -427,6 +426,7 @@ GameObject:
   - component: {fileID: 1295397377}
   - component: {fileID: 1295397376}
   - component: {fileID: 1295397375}
+  - component: {fileID: 1295397378}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -484,6 +484,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1295397378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295397374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8449e80c9ec38254595f03412c28ebec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1338044798
 GameObject:
   m_ObjectHideFlags: 0
@@ -1249,8 +1261,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1047961465}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+      - m_Target: {fileID: 1189326893}
+        m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
         m_MethodName: Volver
         m_Mode: 1
         m_Arguments:
@@ -1361,8 +1373,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1047961465}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+      - m_Target: {fileID: 1189326893}
+        m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
         m_MethodName: Volver
         m_Mode: 1
         m_Arguments:
@@ -1598,7 +1610,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 33.999973, y: -119.13751}
+  m_AnchoredPosition: {x: 33.999977, y: -119.13751}
   m_SizeDelta: {x: 408.6407, y: 79.0918}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4530241009750729284
@@ -1645,8 +1657,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1047961465}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+      - m_Target: {fileID: 1189326893}
+        m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
         m_MethodName: Niveles
         m_Mode: 1
         m_Arguments:
@@ -2309,8 +2321,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1047961465}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+      - m_Target: {fileID: 1189326893}
+        m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
         m_MethodName: Iniciar
         m_Mode: 1
         m_Arguments:
@@ -2626,8 +2638,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1047961465}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+      - m_Target: {fileID: 1189326893}
+        m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
         m_MethodName: Opciones
         m_Mode: 1
         m_Arguments:

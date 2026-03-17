@@ -7,9 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private UiManager uiManager;
     private static GameManager Instance { get; set; }
-
     private Animator animator;
 
     private void Awake()
@@ -17,48 +15,11 @@ public class GameManager : MonoBehaviour
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
+            return;
         }
-        else
-        {
-            Instance = this;
-            
-            DontDestroyOnLoad(gameObject);
-        }
-    }
-    private void Start()
-    {
-        
-       try {
-            uiManager = FindObjectOfType<UiManager>();
-        } catch (System.Exception ex) {
-            Debug.LogError("No se encontró el UiManager en la escena: " + ex.Message);
-        }
-
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
         animator = GetComponentInChildren<Animator>();
-    }
-    public void Iniciar()
-    {
-        uiManager.Iniciar();
-    }
-
-    public void Niveles()
-    {
-        uiManager.Niveles();
-    }
-
-    public void Opciones()
-    {
-        uiManager.Opciones();
-    }
-
-    public void Volver()
-    {
-        uiManager.Volver();
-    }
-
-    public void Salir()
-    {
-        Application.Quit();
     }
 
     public void CargarNivel()
@@ -70,10 +31,13 @@ public class GameManager : MonoBehaviour
     private IEnumerator SceneLoad(int sceneIndex)
     {
         animator.SetBool("Start" , true);
-        yield return new WaitForSeconds(1f); // Opcional: agregar un retraso antes de cargar la escena
+        yield return new WaitForSeconds(1f); 
         SceneManager.LoadScene(sceneIndex);
         
         animator.SetBool("Start", false);
     }
+
+
+    public void Salir() => Application.Quit();
 
 }
