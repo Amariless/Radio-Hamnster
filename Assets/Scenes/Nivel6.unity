@@ -181,8 +181,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: '| |'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4c6c0c1258c2e334e88fba8da602f4c2, type: 2}
-  m_sharedMaterial: {fileID: 2330223653480578223, guid: 4c6c0c1258c2e334e88fba8da602f4c2, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2789,9 +2789,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidad: 10
   fuerzaSalto: 25
-  botonIzquierdo: {fileID: 0}
-  botonDerecho: {fileID: 0}
-  botonSalto: {fileID: 0}
+  botonIzquierdo: {fileID: 1528702850}
+  botonDerecho: {fileID: 877395763}
+  botonSalto: {fileID: 2124394180}
+  player: {fileID: 1710490809}
 --- !u!50 &1710490811
 Rigidbody2D:
   serializedVersion: 4
@@ -3105,7 +3106,7 @@ GameObject:
   - component: {fileID: 1853133031}
   - component: {fileID: 1853133030}
   - component: {fileID: 1853133029}
-  - component: {fileID: 1853133028}
+  - component: {fileID: 1853133032}
   m_Layer: 0
   m_Name: Salida
   m_TagString: Untagged
@@ -3113,21 +3114,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1853133028
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1853133027}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5dd6c062d9cfa544593e4bef240beedf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  puertaCollider: {fileID: 1853133029}
-  animator: {fileID: 640183399}
-  toquesParaAbrir: 30
 --- !u!61 &1853133029
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3242,6 +3228,22 @@ Transform:
   - {fileID: 703476248}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1853133032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1853133027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9898d1206170509469552d04066b24dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puertaCollider: {fileID: 1853133029}
+  sensorCollider: {fileID: 703476249}
+  animator: {fileID: 640183399}
+  esperaFallback: 1
 --- !u!1 &1918586565
 GameObject:
   m_ObjectHideFlags: 0

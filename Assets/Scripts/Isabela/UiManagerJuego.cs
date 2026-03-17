@@ -7,6 +7,7 @@ public class UiManagerJuego : MonoBehaviour
 {
     private static UiManagerJuego Instance { get; set; }
     [SerializeField] private GameObject panelPausa;
+    
 
     public void Pausa()
     {

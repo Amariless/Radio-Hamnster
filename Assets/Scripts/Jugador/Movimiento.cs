@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     public Button botonDerecho;
     public Button botonSalto;
 
+    [SerializeField] private Transform player;
+
     private Rigidbody2D rb;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
@@ -52,6 +54,11 @@ public class PlayerMovement : MonoBehaviour
             enPiso = true;
         else if (collision.gameObject.CompareTag("Platform"))
             enPiso = true;
+
+        if (collision.gameObject.CompareTag("obstaculo"))
+        {
+            killPlayer();
+        }
     }
 
     void OnCollisionExit2D(Collision2D collision)
@@ -110,6 +117,17 @@ public class PlayerMovement : MonoBehaviour
     void PasarNivel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        Debug.Log("¡Nivel completado!");
     }
+
+    public void killPlayer()
+    {
+        Destroy(player.gameObject);
+        Respawn();
+    }
+
+    public void Respawn()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
 }

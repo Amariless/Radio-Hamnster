@@ -563,8 +563,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: '| |'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4c6c0c1258c2e334e88fba8da602f4c2, type: 2}
-  m_sharedMaterial: {fileID: 2330223653480578223, guid: 4c6c0c1258c2e334e88fba8da602f4c2, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -837,29 +837,15 @@ GameObject:
   - component: {fileID: 491328081}
   - component: {fileID: 491328080}
   - component: {fileID: 491328079}
-  - component: {fileID: 491328078}
-  m_Layer: 0
+  - component: {fileID: 491328082}
+  - component: {fileID: 491328083}
+  m_Layer: 6
   m_Name: Salida
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &491328078
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 491328077}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5dd6c062d9cfa544593e4bef240beedf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  puertaCollider: {fileID: 491328079}
-  animator: {fileID: 1890639016}
-  toquesParaAbrir: 30
 --- !u!61 &491328079
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -892,7 +878,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.66783524, y: -0.24153042}
+  m_Offset: {x: -0.41719437, y: -0.24153042}
   m_SpriteTilingProperty:
     border: {x: 5.35, y: 0.12, z: 1.5799999, w: 0.07}
     pivot: {x: 0.72424036, y: 0.50224227}
@@ -903,7 +889,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.1946945, y: 9.80286}
+  m_Size: {x: 3.6959763, y: 9.80286}
   m_EdgeRadius: 0
 --- !u!212 &491328080
 SpriteRenderer:
@@ -974,6 +960,34 @@ Transform:
   - {fileID: 1765070572}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &491328082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491328077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 410ce188975bd874faa48e8efc9cee71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &491328083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491328077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9898d1206170509469552d04066b24dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puertaCollider: {fileID: 491328079}
+  sensorCollider: {fileID: 1765070573}
+  animator: {fileID: 1890639016}
+  esperaFallback: 1
 --- !u!1 &658509356
 GameObject:
   m_ObjectHideFlags: 0
@@ -2133,9 +2147,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidad: 10
   fuerzaSalto: 25
-  botonIzquierdo: {fileID: 0}
-  botonDerecho: {fileID: 0}
-  botonSalto: {fileID: 0}
+  botonIzquierdo: {fileID: 463468469}
+  botonDerecho: {fileID: 1123333208}
+  botonSalto: {fileID: 734994175}
+  player: {fileID: 1185615671}
 --- !u!212 &1185615676
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3214,7 +3229,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1765070572}
   - component: {fileID: 1765070573}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sensor
   m_TagString: Sensor
   m_Icon: {fileID: 0}
@@ -3268,7 +3283,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.05613327, y: 0.14033413}
+  m_Offset: {x: -0.10604668, y: 0.14033413}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -3279,7 +3294,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.88773346, y: 7.904419}
+  m_Size: {x: 0.56337357, y: 7.904419}
   m_EdgeRadius: 0
 --- !u!1 &1862946750
 GameObject:
@@ -3426,7 +3441,7 @@ GameObject:
   - component: {fileID: 1890639018}
   - component: {fileID: 1890639017}
   - component: {fileID: 1890639016}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Puerta de la salida
   m_TagString: Untagged
   m_Icon: {fileID: 0}

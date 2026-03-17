@@ -2042,9 +2042,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidad: 10
   fuerzaSalto: 25
-  botonIzquierdo: {fileID: 0}
-  botonDerecho: {fileID: 0}
-  botonSalto: {fileID: 0}
+  botonIzquierdo: {fileID: 665610582}
+  botonDerecho: {fileID: 374037242}
+  botonSalto: {fileID: 1885388381}
+  player: {fileID: 1033845680}
 --- !u!212 &1033845685
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2374,8 +2375,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: '| |'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4c6c0c1258c2e334e88fba8da602f4c2, type: 2}
-  m_sharedMaterial: {fileID: 2330223653480578223, guid: 4c6c0c1258c2e334e88fba8da602f4c2, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
