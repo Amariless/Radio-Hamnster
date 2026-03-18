@@ -28,6 +28,12 @@ public class GameManager : MonoBehaviour
         StartCoroutine(SceneLoad(nivelSiguiente));
     }
 
+    public static void CargarNivel2(int nivelIndex)
+    {
+        if (Instance != null)
+            Instance.StartCoroutine(Instance.SceneLoad(nivelIndex));
+    }
+
     private IEnumerator SceneLoad(int sceneIndex)
     {
         animator.SetBool("Start" , true);

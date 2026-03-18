@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     private float direccionMovimiento = 0f;
 
     private GameManager gameManager;
+    private int NivelActual;
 
     void Start()
     {
@@ -34,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
         AddHoldListener(botonDerecho, () => direccionMovimiento =  1f, () => direccionMovimiento = 0f);
 
         botonSalto.onClick.AddListener(Jump);
+        animator.SetBool("Radio", true);
     }
 
     void Update()
@@ -115,6 +117,18 @@ public class PlayerMovement : MonoBehaviour
         {
             gameManager.CargarNivel();
         }
+        if (other.CompareTag("Gusano"))
+        {
+            animator.SetBool("Radio", false);
+        }
+        if (other.CompareTag("CheckPoint"))
+        {
+            NivelActual = SceneManager.GetActiveScene().buildIndex;
+             PlayerPrefs.SetInt("NivelActual", NivelActual);
+             Debug.Log("Nivel guardado: " + NivelActual);
+        }
+
+
     }
 
     public void killPlayer()

@@ -9,6 +9,8 @@ TagManager:
   - Puerta
   - Sensor
   - obstaculo
+  - Gusano
+  - CheckPoint
   layers:
   - Default
   - TransparentFX

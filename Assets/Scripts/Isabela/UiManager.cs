@@ -23,11 +23,37 @@ public class UiManager : MonoBehaviour
         panelOpciones.SetActive(false);
 
         panelActual = panelMenu;
+
+        int nivelGuardado = PlayerPrefs.GetInt("NivelActual");
+        GameManager.CargarNivel2(nivelGuardado);
     }
 
-    public void Niveles() => MostrarPanel(panelNiveles);
-    public void Opciones() => MostrarPanel(panelOpciones);
-    public void Volver() => MostrarPanel(panelMenu);
+    public void Niveles()
+    {
+        panelActual.SetActive(false); 
+        panelNiveles.SetActive(true); 
+        panelActual = panelNiveles;  
+    }
+
+    public void Opciones()
+    {
+        panelActual.SetActive(false); 
+        panelOpciones.SetActive(true);
+        panelActual = panelOpciones; 
+    }
+
+    public void Volver()
+    {
+        
+        if (panelActual != null)
+        {
+            panelActual.SetActive(false); 
+        }
+
+        panelMenu.SetActive(true); 
+        panelActual = panelMenu;  
+    }
+    
     public void Salir() => FindAnyObjectByType<GameManager>().Salir();  
 
     private void MostrarPanel(GameObject panel)
