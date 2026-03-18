@@ -25,23 +25,37 @@ public class GameManager : MonoBehaviour
     public void CargarNivel()
     {
         int nivelSiguiente = SceneManager.GetActiveScene().buildIndex + 1;
-        StartCoroutine(SceneLoad(nivelSiguiente));
+    // Si el siguiente nivel no existe, es el último
+        if (nivelSiguiente >= SceneManager.sceneCountInBuildSettings)
+        {
+            PlayerPrefs.DeleteKey("NivelActual"); // borra el progreso
+            PlayerPrefs.SetInt("NivelActual", 1);
+            PlayerPrefs.Save();
+        // Aquí puedes cargar el menú principal o la escena 0
+            StartCoroutine(SceneLoad(0)); // ← cambia 0 por el índice de tu menú
+        }
+        else
+        {
+            StartCoroutine(SceneLoad(nivelSiguiente));
+        }
     }
 
-    public static void CargarNivel2(int nivelIndex)
+    public void CargarNivel2(int nivelIndex)
     {
-        if (Instance != null)
-            Instance.StartCoroutine(Instance.SceneLoad(nivelIndex));
+        StartCoroutine(SceneLoad(nivelIndex));
     }
 
     private IEnumerator SceneLoad(int sceneIndex)
-    {
-        animator.SetBool("Start" , true);
-        yield return new WaitForSeconds(1f); 
-        SceneManager.LoadScene(sceneIndex);
-        
+{
+    if (animator != null)
+        animator.SetBool("Start", true);
+
+    yield return new WaitForSeconds(1f);
+    SceneManager.LoadScene("Nivel" + sceneIndex);
+
+    if (animator != null)
         animator.SetBool("Start", false);
-    }
+}
 
 
     public void Salir() => Application.Quit();

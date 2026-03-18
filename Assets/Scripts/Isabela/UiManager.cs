@@ -8,9 +8,11 @@ public class UiManager : MonoBehaviour
     [SerializeField] private GameObject panelNiveles;
     [SerializeField] private GameObject panelOpciones;
     private GameObject panelActual;
+    private GameManager gameManager;
 
     void Start()
     {
+        gameManager = FindObjectOfType<GameManager>();
         panelMenu.SetActive(true);
         panelNiveles.SetActive(false);
         panelOpciones.SetActive(false);
@@ -24,8 +26,8 @@ public class UiManager : MonoBehaviour
 
         panelActual = panelMenu;
 
-        int nivelGuardado = PlayerPrefs.GetInt("NivelActual");
-        GameManager.CargarNivel2(nivelGuardado);
+        int nivelGuardado = PlayerPrefs.GetInt("NivelActual", 1);
+        gameManager.CargarNivel2(nivelGuardado);
     }
 
     public void Niveles()

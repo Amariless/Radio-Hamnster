@@ -19,6 +19,6 @@ public class UiManagerJuego : MonoBehaviour
     public void VolverMenu()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("Nivel0");
     }
 }

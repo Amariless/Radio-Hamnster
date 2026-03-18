@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     private bool enPiso;
     private float direccionMovimiento = 0f;
 
-    private GameManager gameManager;
+   [SerializeField] private GameManager gameManager;
     private int NivelActual;
 
     void Start()
@@ -120,6 +120,7 @@ public class PlayerMovement : MonoBehaviour
         if (other.CompareTag("Gusano"))
         {
             animator.SetBool("Radio", false);
+            Destroy(other.gameObject);
         }
         if (other.CompareTag("CheckPoint"))
         {
