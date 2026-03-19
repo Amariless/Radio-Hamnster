@@ -4,48 +4,60 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private UiManager uiManager;
     private static GameManager Instance { get; set; }
+    private Animator animator;
 
     private void Awake()
     {
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+        animator = GetComponentInChildren<Animator>();
+    }
+
+    public void CargarNivel()
+    {
+        int nivelSiguiente = SceneManager.GetActiveScene().buildIndex + 1;
+    // Si el siguiente nivel no existe, es el último
+        if (nivelSiguiente >= SceneManager.sceneCountInBuildSettings)
+        {
+            PlayerPrefs.DeleteKey("NivelActual"); // borra el progreso
+            PlayerPrefs.SetInt("NivelActual", 1);
+            PlayerPrefs.Save();
+        // Aquí puedes cargar el menú principal o la escena 0
+            StartCoroutine(SceneLoad(0)); // ← cambia 0 por el índice de tu menú
         }
         else
         {
-            Instance = this;
+            StartCoroutine(SceneLoad(nivelSiguiente));
         }
     }
-    private void Start()
+
+    public void CargarNivel2(int nivelIndex)
     {
-       try {
-            uiManager = FindObjectOfType<UiManager>();
-        } catch (System.Exception ex) {
-            Debug.LogError("No se encontró el UiManager en la escena: " + ex.Message);
-        }
-    }
-    public void Iniciar()
-    {
-        uiManager.Iniciar();
+        StartCoroutine(SceneLoad(nivelIndex));
     }
 
-    public void Niveles()
-    {
-        uiManager.Niveles();
-    }
+    private IEnumerator SceneLoad(int sceneIndex)
+{
+    if (animator != null)
+        animator.SetBool("Start", true);
 
-    public void Opciones()
-    {
-        uiManager.Opciones();
-    }
+    yield return new WaitForSeconds(1f);
+    SceneManager.LoadScene("Nivel" + sceneIndex);
 
-    public void Volver()
-    {
-        uiManager.Volver();
-    }
+    if (animator != null)
+        animator.SetBool("Start", false);
+}
+
+
+    public void Salir() => Application.Quit();
 
 }

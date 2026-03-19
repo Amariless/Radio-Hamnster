@@ -821,6 +821,10 @@ MonoBehaviour:
   botonIzquierdo: {fileID: 655260593}
   botonDerecho: {fileID: 664670706}
   botonSalto: {fileID: 8223600}
+<<<<<<< HEAD
+=======
+  player: {fileID: 0}
+>>>>>>> origin/main
 --- !u!212 &328201473
 SpriteRenderer:
   m_ObjectHideFlags: 0
