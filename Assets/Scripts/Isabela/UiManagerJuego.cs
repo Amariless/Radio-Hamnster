@@ -21,4 +21,5 @@ public class UiManagerJuego : MonoBehaviour
         Time.timeScale = 1f;
         SceneManager.LoadScene("Nivel0");
     }
+    
 }

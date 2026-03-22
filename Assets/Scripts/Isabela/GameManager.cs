@@ -62,15 +62,24 @@ public class GameManager : MonoBehaviour
         animator.SetBool("Start", false);
         
 }
+
     IEnumerator AnimationMarie()
+{
+    letras scriptLetras = GameObject.Find("Marie").GetComponentInChildren<letras>(); // busca en los hijos de Marie
+    Debug.Log("elemento encontrado: " + (scriptLetras != null ? "sí" : "no"));
+
+
+    if (animatorMarie != null)
     {
-        if (animatorMarie != null)
-        {
-            animatorMarie.SetBool("Entra", true);
-            yield return new WaitForSeconds(3f);
-            animatorMarie.SetBool("Entra", false);
-        }
+        animatorMarie.SetBool("Entra", true);
+
+        if (scriptLetras != null)
+            scriptLetras.Activar();
+
+        yield return new WaitForSeconds(3f);
+        animatorMarie.SetBool("Entra", false);
     }
+}
 
 
     public void Salir() => Application.Quit();
