@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     private bool enPiso;
     private float direccionMovimiento = 0f;
 
-   [SerializeField] private GameManager gameManager;
+    private GameManager gameManager;
     private int NivelActual;
 
     void Start()
@@ -29,13 +29,19 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        gameManager = FindObjectOfType<GameManager>();
 
-        AddHoldListener(botonIzquierdo,  () => direccionMovimiento = -1f, () => direccionMovimiento = 0f);
-        AddHoldListener(botonDerecho, () => direccionMovimiento =  1f, () => direccionMovimiento = 0f);
+        AddHoldListener(botonIzquierdo, () => direccionMovimiento = -1f, () => direccionMovimiento = 0f);
+        AddHoldListener(botonDerecho,   () => direccionMovimiento =  1f, () => direccionMovimiento = 0f);
 
         botonSalto.onClick.AddListener(Jump);
         animator.SetBool("Radio", true);
+    }
+
+    GameManager GetGameManager()
+    {
+        if (gameManager == null)
+            gameManager = FindObjectOfType<GameManager>();
+        return gameManager;
     }
 
     void Update()
@@ -61,9 +67,7 @@ public class PlayerMovement : MonoBehaviour
             enPiso = true;
 
         if (collision.gameObject.CompareTag("obstaculo"))
-        {
             killPlayer();
-        }
     }
 
     void OnCollisionExit2D(Collision2D collision)
@@ -90,24 +94,16 @@ public class PlayerMovement : MonoBehaviour
         trigger.triggers.Add(releaseEntry);
     }
 
-    public void Animation(){
-        if(direccionMovimiento == 0f)
+    public void Animation()
+    {
+        if (direccionMovimiento == 0f)
         {
             animator.SetBool("isRunning", false);
         }
         else
         {
             animator.SetBool("isRunning", true);
-            
-            // Voltear el sprite según la dirección
-            if(direccionMovimiento < 0f)
-            {
-                spriteRenderer.flipX = true;
-            }
-            else if(direccionMovimiento > 0f)
-            {
-                spriteRenderer.flipX = false;
-            }
+            spriteRenderer.flipX = direccionMovimiento < 0f;
         }
     }
 
@@ -115,7 +111,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.CompareTag("Sensor"))
         {
-            gameManager.CargarNivel();
+            GetGameManager()?.CargarNivel();
         }
         if (other.CompareTag("Gusano"))
         {
@@ -125,11 +121,9 @@ public class PlayerMovement : MonoBehaviour
         if (other.CompareTag("CheckPoint"))
         {
             NivelActual = SceneManager.GetActiveScene().buildIndex;
-             PlayerPrefs.SetInt("NivelActual", NivelActual);
-             Debug.Log("Nivel guardado: " + NivelActual);
+            PlayerPrefs.SetInt("NivelActual", NivelActual);
+            Debug.Log("Nivel guardado: " + NivelActual);
         }
-
-
     }
 
     public void killPlayer()
@@ -142,5 +136,4 @@ public class PlayerMovement : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-
 }
