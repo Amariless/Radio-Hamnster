@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 {
     private static GameManager Instance { get; set; }
     private Animator animator;
+    private Animator animatorMarie;
 
     private void Awake()
     {
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
         animator = GetComponentInChildren<Animator>();
+        animatorMarie = GameObject.Find("Marie").GetComponent<Animator>();
     }
 
     public void CargarNivel()
@@ -50,11 +52,33 @@ public class GameManager : MonoBehaviour
     if (animator != null)
         animator.SetBool("Start", true);
 
-    yield return new WaitForSeconds(1f);
-    SceneManager.LoadScene("Nivel" + sceneIndex);
+
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("Nivel" + sceneIndex);
+        StartCoroutine(AnimationMarie());
+    
 
     if (animator != null)
         animator.SetBool("Start", false);
+        
+}
+
+    IEnumerator AnimationMarie()
+{
+    letras scriptLetras = GameObject.Find("Marie").GetComponentInChildren<letras>(); // busca en los hijos de Marie
+    Debug.Log("elemento encontrado: " + (scriptLetras != null ? "sí" : "no"));
+
+
+    if (animatorMarie != null)
+    {
+        animatorMarie.SetBool("Entra", true);
+
+        if (scriptLetras != null)
+            scriptLetras.Activar();
+
+        yield return new WaitForSeconds(3f);
+        animatorMarie.SetBool("Entra", false);
+    }
 }
 
 
