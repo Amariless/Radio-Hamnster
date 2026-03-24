@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
 {
     private static GameManager Instance { get; set; }
     private Animator animator;
-    private Animator animatorMarie;
+    public Animator animatorMarie;
 
     private void Awake()
     {
@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.DeleteKey("NivelActual"); // borra el progreso
             PlayerPrefs.SetInt("NivelActual", 1);
             PlayerPrefs.Save();
+            animatorMarie.SetBool("Entra", false); 
         // Aquí puedes cargar el menú principal o la escena 0
             StartCoroutine(SceneLoad(0)); // ← cambia 0 por el índice de tu menú
         }
