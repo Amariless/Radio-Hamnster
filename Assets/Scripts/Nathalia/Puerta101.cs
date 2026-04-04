@@ -46,7 +46,7 @@ public class puerta101 : MonoBehaviour
         }
     }
 
-    void AbrirPuerta()
+    public void AbrirPuerta()
     {
         if (!puertaAbierta)
         {

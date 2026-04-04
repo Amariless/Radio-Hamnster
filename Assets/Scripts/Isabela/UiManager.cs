@@ -4,26 +4,15 @@ using UnityEngine;
 
 public class UiManager : MonoBehaviour
 {
-    private static UiManager Instance { get; set; }
     [SerializeField] private GameObject panelMenu;
     [SerializeField] private GameObject panelNiveles;
     [SerializeField] private GameObject panelOpciones;
     private GameObject panelActual;
-
-    private void Awake()
-    {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            Instance = this;
-        }
-    }
+    private GameManager gameManager;
 
     void Start()
     {
+        gameManager = FindObjectOfType<GameManager>();
         panelMenu.SetActive(true);
         panelNiveles.SetActive(false);
         panelOpciones.SetActive(false);
@@ -36,6 +25,9 @@ public class UiManager : MonoBehaviour
         panelOpciones.SetActive(false);
 
         panelActual = panelMenu;
+
+        int nivelGuardado = PlayerPrefs.GetInt("NivelActual", 1);
+        gameManager.CargarNivel2(nivelGuardado);
     }
 
     public void Niveles()
@@ -47,10 +39,9 @@ public class UiManager : MonoBehaviour
 
     public void Opciones()
     {
-        // Cambiar al panel de opciones
-        panelActual.SetActive(false); // Desactivar el panel actual
-        panelOpciones.SetActive(true); // Activar el panel de opciones
-        panelActual = panelOpciones;  // Actualizar el panel actual
+        panelActual.SetActive(false); 
+        panelOpciones.SetActive(true);
+        panelActual = panelOpciones; 
     }
 
     public void Volver()
@@ -63,5 +54,14 @@ public class UiManager : MonoBehaviour
 
         panelMenu.SetActive(true); 
         panelActual = panelMenu;  
+    }
+    
+    public void Salir() => FindAnyObjectByType<GameManager>().Salir();  
+
+    private void MostrarPanel(GameObject panel)
+    {
+        if (panelActual != null) panelActual.SetActive(false);
+        panel.SetActive(true);
+        panelActual = panel;
     }
 }

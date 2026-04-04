@@ -13,11 +13,16 @@ public class PlayerMovement : MonoBehaviour
     public Button botonDerecho;
     public Button botonSalto;
 
+    [SerializeField] private Transform player;
+
     private Rigidbody2D rb;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
     private bool enPiso;
     private float direccionMovimiento = 0f;
+
+    private GameManager gameManager;
+    private int NivelActual;
 
     void Start()
     {
@@ -25,10 +30,18 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
-        AddHoldListener(botonIzquierdo,  () => direccionMovimiento = -1f, () => direccionMovimiento = 0f);
-        AddHoldListener(botonDerecho, () => direccionMovimiento =  1f, () => direccionMovimiento = 0f);
+        AddHoldListener(botonIzquierdo, () => direccionMovimiento = -1f, () => direccionMovimiento = 0f);
+        AddHoldListener(botonDerecho,   () => direccionMovimiento =  1f, () => direccionMovimiento = 0f);
 
         botonSalto.onClick.AddListener(Jump);
+        animator.SetBool("Radio", true);
+    }
+
+    GameManager GetGameManager()
+    {
+        if (gameManager == null)
+            gameManager = FindObjectOfType<GameManager>();
+        return gameManager;
     }
 
     void Update()
@@ -52,6 +65,9 @@ public class PlayerMovement : MonoBehaviour
             enPiso = true;
         else if (collision.gameObject.CompareTag("Platform"))
             enPiso = true;
+
+        if (collision.gameObject.CompareTag("obstaculo"))
+            killPlayer();
     }
 
     void OnCollisionExit2D(Collision2D collision)
@@ -78,24 +94,16 @@ public class PlayerMovement : MonoBehaviour
         trigger.triggers.Add(releaseEntry);
     }
 
-    public void Animation(){
-        if(direccionMovimiento == 0f)
+    public void Animation()
+    {
+        if (direccionMovimiento == 0f)
         {
             animator.SetBool("isRunning", false);
         }
         else
         {
             animator.SetBool("isRunning", true);
-            
-            // Voltear el sprite según la dirección
-            if(direccionMovimiento < 0f)
-            {
-                spriteRenderer.flipX = true;
-            }
-            else if(direccionMovimiento > 0f)
-            {
-                spriteRenderer.flipX = false;
-            }
+            spriteRenderer.flipX = direccionMovimiento < 0f;
         }
     }
 
@@ -103,13 +111,29 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.CompareTag("Sensor"))
         {
-            PasarNivel();
+            GetGameManager()?.CargarNivel();
+        }
+        if (other.CompareTag("Gusano"))
+        {
+            animator.SetBool("Radio", false);
+            Destroy(other.gameObject);
+        }
+        if (other.CompareTag("CheckPoint"))
+        {
+            NivelActual = SceneManager.GetActiveScene().buildIndex;
+            PlayerPrefs.SetInt("NivelActual", NivelActual);
+            Debug.Log("Nivel guardado: " + NivelActual);
         }
     }
 
-    void PasarNivel()
+    public void killPlayer()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        Debug.Log("¡Nivel completado!");
+        Destroy(player.gameObject);
+        Respawn();
+    }
+
+    public void Respawn()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

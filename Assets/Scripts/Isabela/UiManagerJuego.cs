@@ -1,27 +1,36 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class UiManagerJuego : MonoBehaviour
 {
-    private static UiManagerJuego Instance { get; set; }
     [SerializeField] private GameObject panelPausa;
+    [SerializeField] private GameManager gameManager;
 
+    private void Awake()
+    {
+        if (gameManager == null)
+            gameManager = FindObjectOfType<GameManager>();
+    }
     public void Pausa()
     {
         panelPausa.SetActive(true);
         Time.timeScale = 0f; 
+
     }
 
     public void Reanudar()
     {
-        Time.timeScale = 1f;
         panelPausa.SetActive(false);
+        Time.timeScale = 1f;
     }
 
     public void VolverMenu()
     {
-        SceneManager.LoadScene("Menu");
+        Time.timeScale = 1f;
+        if (gameManager != null && gameManager.animatorMarie != null)
+            gameManager.animatorMarie.SetBool("Entra", false);
+
+        SceneManager.LoadScene("Nivel0");
     }
+    
 }
