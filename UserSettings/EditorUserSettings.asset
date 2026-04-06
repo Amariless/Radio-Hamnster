@@ -6,37 +6,43 @@ EditorUserSettings:
   serializedVersion: 4
   m_ConfigSettings:
     RecentlyUsedSceneGuid-0:
-      value: 5352565e5004085a0e5f09711627084441161e7e7f2a24617a7a1936e7b36069
-      flags: 0
-    RecentlyUsedSceneGuid-1:
-      value: 5754045f505408085d0c5b77147b5d44424e1a7a2a7a77647e284567b2b1313a
-      flags: 0
-    RecentlyUsedSceneGuid-2:
       value: 5b050d5250545c0d5d5d557a44760c4446154e2b7f7b70352f781e31b2b3656c
       flags: 0
-    RecentlyUsedSceneGuid-3:
-      value: 5250555e0304500b5c58582349720844424e4f782f2e7064752c4f6bb2e1656b
-      flags: 0
-    RecentlyUsedSceneGuid-4:
+    RecentlyUsedSceneGuid-1:
       value: 5b02525e5c505e0a5a5c0f7448255e444e161c7f7a717063797c1f60e1b36460
       flags: 0
+    RecentlyUsedSceneGuid-2:
+      value: 505705020157085f585e5b76127a0644464e4b2975787031757f1b37b3b8356f
+      flags: 0
+    RecentlyUsedSceneGuid-3:
+      value: 540903025456590b0b5a55744521064413161a297c7827652e2f4d30b1e46d60
+      flags: 0
+    RecentlyUsedSceneGuid-4:
+      value: 5a00515e54035d0b59085d7249700c4444164979757825647e704931b6b9663e
+      flags: 0
     RecentlyUsedSceneGuid-5:
-      value: 02050604060359025459587a41740844414e19737b717634747f446ab5b7306e
+      value: 5250555e0304500b5c58582349720844424e4f782f2e7064752c4f6bb2e1656b
       flags: 0
     RecentlyUsedSceneGuid-6:
-      value: 5007075155575e0c5c0a5d2647225e44444f4d7d7d717336282c4466e0b76169
+      value: 0102575f070d0b080c0d08714825094441161d787a7b236774711831b5b6366d
       flags: 0
     RecentlyUsedSceneGuid-7:
-      value: 53550c525d025e0f5d585b7542760d44154e4e7a2e7924687c2b4a63e6b8666f
+      value: 53040704070c5859090a087a45205d44464f4a7e2f7874657c7a4b32b0b1326c
       flags: 0
     RecentlyUsedSceneGuid-8:
-      value: 0255520754510f0c5d0c5d7a4175094414151a797d2c20617c284e32e0b33169
+      value: 5406500207060b5808565a7340745944444e4d7f2d2d77347e7a4b62bbb26069
       flags: 0
     RecentlyUsedSceneGuid-9:
-      value: 505705020157085f585e5b76127a0644464e4b2975787031757f1b37b3b8356f
+      value: 540704555356590d0e575c7614755c444e151d72742b2361282c1b61bab33161
       flags: 0
     UnityRemoteDevice:
       value: 225f4d46245b0d4902070862342649191512
+      flags: 0
+    UnityRemoteJoystickSource:
+      value: 2f5e570709
+      flags: 0
+    UnityRemoteResolution:
+      value: 2d5e460b0459
       flags: 0
     vcSharedLogLevel:
       value: 0d5e400f0650
@@ -46,7 +52,7 @@ EditorUserSettings:
   m_VCDebugCmd: 0
   m_VCDebugOut: 0
   m_SemanticMergeMode: 2
-  m_DesiredImportWorkerCount: 6
+  m_DesiredImportWorkerCount: 4
   m_StandbyImportWorkerCount: 2
   m_IdleImportWorkerShutdownDelay: 60000
   m_VCShowFailedCheckout: 1
