@@ -2214,6 +2214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8449e80c9ec38254595f03412c28ebec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animatorMarie: {fileID: 0}
 --- !u!4 &1370594403
 Transform:
   m_ObjectHideFlags: 0
@@ -2581,10 +2582,10 @@ MonoBehaviour:
   - Physics, baby
   - Good Luck
   - Have you ever try to fly?
-  - Mensaje del nivel 3
-  - Mensaje del nivel 3
-  - Mensaje del nivel 3
-  - Mensaje del nivel 3
+  - Up and down
+  - Baggage
+  - Knock... Knock..?
+  - High precision shot
   - Follow your instincts and JUMP!!
   - How's your energy?
   - Sometimes, you just have to disconnect
