@@ -1968,7 +1968,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSmoothing: 5
-  moveSpeed: 3
+  moveSpeed: 5
   movementSmoothing: 8
 --- !u!1 &440911299
 GameObject:
@@ -3802,9 +3802,9 @@ RectTransform:
   - {fileID: 268422326}
   m_Father: {fileID: 2065156132}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1816, y: -101.07739}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -104, y: -101.07739}
   m_SizeDelta: {x: 120, y: 94.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1432077555
@@ -5448,6 +5448,7 @@ SpriteRenderer:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1871432226}
   - {fileID: 1598988627}
   - {fileID: 2000794370}
   - {fileID: 537380752}
@@ -5459,5 +5460,4 @@ SceneRoots:
   - {fileID: 639088407}
   - {fileID: 108708302}
   - {fileID: 183678595}
-  - {fileID: 1871432226}
   - {fileID: 440911300}

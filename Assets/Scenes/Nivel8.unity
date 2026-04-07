@@ -1344,6 +1344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panelPausa: {fileID: 1750352511}
+  gameManager: {fileID: 0}
 --- !u!4 &316250383
 Transform:
   m_ObjectHideFlags: 0
@@ -1527,9 +1528,9 @@ RectTransform:
   - {fileID: 1384193925}
   m_Father: {fileID: 434568158}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1826, y: -101.08002}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -94, y: -101.08002}
   m_SizeDelta: {x: 120, y: 94.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &404398933

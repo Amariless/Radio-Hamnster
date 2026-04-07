@@ -363,7 +363,7 @@ Transform:
   m_GameObject: {fileID: 267836269}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -25.961311, y: 0.024569869, z: 0}
+  m_LocalPosition: {x: -25.875399, y: 0.0598799, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -566,8 +566,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bf562eab013f2f4884a961ca9fa91ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 150
-  fuerzaSalto: 120
+  velocidad: 140
+  fuerzaSalto: 110
   botonIzquierdo: {fileID: 1557894383}
   botonDerecho: {fileID: 441668927}
   botonSalto: {fileID: 1828618119}
@@ -1481,7 +1481,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puertaCollider: {fileID: 639088405}
   animator: {fileID: 604556492}
-  toquesParaAbrir: 2
+  toquesParaAbrir: 1
 --- !u!61 &639088405
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1588,7 +1588,7 @@ Transform:
   m_GameObject: {fileID: 639088403}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 37.5541, y: -1.5, z: 0}
+  m_LocalPosition: {x: 35.5, y: -1.5, z: 0}
   m_LocalScale: {x: 1.960926, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2966,9 +2966,9 @@ RectTransform:
   - {fileID: 934165527}
   m_Father: {fileID: 496230779}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1816, y: -101.07739}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -104, y: -101.07739}
   m_SizeDelta: {x: 120, y: 94.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1358053229
@@ -4184,7 +4184,7 @@ Transform:
   m_GameObject: {fileID: 1984868968}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.038689, y: -1.6145699, z: -10}
+  m_LocalPosition: {x: -9.124601, y: -1.6498799, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4220,7 +4220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d81b892b5552fc5418b9c7117a282ee2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelPausa: {fileID: 0}
+  panelPausa: {fileID: 399384230}
   gameManager: {fileID: 0}
 --- !u!4 &1996070899
 Transform:
@@ -4443,11 +4443,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -1.8247056, y: 12.124734}
-      - {x: -40.05989, y: 11.773789}
-      - {x: -40.182167, y: -29.098152}
-      - {x: 33.414925, y: -28.758114}
-      - {x: 32.605568, y: 12.113828}
+    - - {x: -1.7354498, y: 10.96441}
+      - {x: -40.05989, y: 10.68813}
+      - {x: -40.33726, y: -27.237022}
+      - {x: 33.25983, y: -27.207172}
+      - {x: 32.45047, y: 10.717982}
   m_UseDelaunayMesh: 0
 --- !u!4 &2054626810
 Transform:

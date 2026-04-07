@@ -16,12 +16,11 @@ public class letras : MonoBehaviour
         "Mensaje del nivel 3",       // escena 3
     };
 
-    public void Activar()
-    {
-        int escenaActual = SceneManager.GetActiveScene().buildIndex + 1;
-        if (escenaActual < mensajes.Length && mensajes[escenaActual] != "")
-            StartCoroutine(EscribirTexto(mensajes[escenaActual]));
-    }
+    public void Activar(int sceneIndex)  // <-- recibe el índice
+{
+    if (sceneIndex < mensajes.Length && mensajes[sceneIndex] != "")
+        StartCoroutine(EscribirTexto(mensajes[sceneIndex]));
+}
 
     IEnumerator EscribirTexto(string mensaje)
     {

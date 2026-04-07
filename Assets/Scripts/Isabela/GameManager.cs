@@ -34,8 +34,8 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("NivelActual", 1);
             PlayerPrefs.Save();
             animatorMarie.SetBool("Entra", false); 
-        // Aquí puedes cargar el menú principal o la escena 0
-            StartCoroutine(SceneLoad(0)); // ← cambia 0 por el índice de tu menú
+       
+            StartCoroutine(SceneLoad(0)); 
         }
         else
         {
@@ -53,29 +53,27 @@ public class GameManager : MonoBehaviour
     if (animator != null)
         animator.SetBool("Start", true);
 
-
-        yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene("Nivel" + sceneIndex);
-        StartCoroutine(AnimationMarie());
-    
+    yield return new WaitForSeconds(1f);
+    SceneManager.LoadScene("Nivel" + sceneIndex);
+    StartCoroutine(AnimationMarie(sceneIndex)); // <-- pasa el índice
 
     if (animator != null)
         animator.SetBool("Start", false);
-        
 }
 
-    IEnumerator AnimationMarie()
+IEnumerator AnimationMarie(int sceneIndex) // <-- recibe el índice
 {
-    letras scriptLetras = GameObject.Find("Marie").GetComponentInChildren<letras>(); // busca en los hijos de Marie
-    Debug.Log("elemento encontrado: " + (scriptLetras != null ? "sí" : "no"));
+    if (sceneIndex == 0)
+        yield break;
 
+    letras scriptLetras = GameObject.Find("Marie").GetComponentInChildren<letras>();
 
     if (animatorMarie != null)
     {
         animatorMarie.SetBool("Entra", true);
 
         if (scriptLetras != null)
-            scriptLetras.Activar();
+            scriptLetras.Activar(sceneIndex);
 
         yield return new WaitForSeconds(3f);
         animatorMarie.SetBool("Entra", false);

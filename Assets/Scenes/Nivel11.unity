@@ -640,9 +640,9 @@ RectTransform:
   - {fileID: 1024523291}
   m_Father: {fileID: 1808498919}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1816, y: -101.07739}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -104, y: -101.07739}
   m_SizeDelta: {x: 120, y: 94.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &175557503
@@ -1002,7 +1002,7 @@ Transform:
   m_GameObject: {fileID: 267836269}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -23.367785, y: 0.022130013, z: 0}
+  m_LocalPosition: {x: -23.406612, y: 0.03564, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3349,7 +3349,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puertaCollider: {fileID: 639088405}
   animator: {fileID: 604556492}
-  toquesParaAbrir: 2
+  toquesParaAbrir: 1
 --- !u!61 &639088405
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4000,7 +4000,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d81b892b5552fc5418b9c7117a282ee2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelPausa: {fileID: 0}
+  panelPausa: {fileID: 1968722228}
   gameManager: {fileID: 0}
 --- !u!4 &819086356
 Transform:
@@ -9789,7 +9789,7 @@ Transform:
   m_GameObject: {fileID: 1984868968}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.032217, y: 0.54787, z: -10}
+  m_LocalPosition: {x: -8.993389, y: 0.53436, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10134,11 +10134,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -1.8247056, y: 12.124734}
-      - {x: -40.05989, y: 11.773789}
+    - - {x: -1.6655873, y: 10.033072}
+      - {x: -39.99383, y: 10.039416}
       - {x: -40.182167, y: -29.098152}
       - {x: 33.414925, y: -28.758114}
-      - {x: 32.605568, y: 12.113828}
+      - {x: 33.519287, y: 9.969127}
   m_UseDelaunayMesh: 0
 --- !u!4 &2054626810
 Transform:

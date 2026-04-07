@@ -2140,7 +2140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puertaCollider: {fileID: 639088405}
   animator: {fileID: 604556492}
-  toquesParaAbrir: 2
+  toquesParaAbrir: 1
 --- !u!61 &639088405
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2267,7 +2267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d3a08edfa68d4b4bb3026f83c5d4185, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abreConBateriaAlta: 0
+  abreConBateriaAlta: 1
   puerta: {fileID: 639088404}
 --- !u!50 &639088409
 Rigidbody2D:
@@ -2514,7 +2514,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puertaCollider: {fileID: 793245706}
   animator: {fileID: 748173591}
-  toquesParaAbrir: 2
+  toquesParaAbrir: 1
 --- !u!61 &793245706
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4285,9 +4285,9 @@ RectTransform:
   - {fileID: 1863209153}
   m_Father: {fileID: 1756602067}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1816, y: -101.07739}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -104, y: -101.07739}
   m_SizeDelta: {x: 120, y: 94.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1839414093
@@ -4691,6 +4691,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panelPausa: {fileID: 861697651}
+  gameManager: {fileID: 0}
 --- !u!1 &2000794369
 GameObject:
   m_ObjectHideFlags: 0
